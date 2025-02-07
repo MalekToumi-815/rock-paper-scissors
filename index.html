@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <title>title</title>
     <script>
+        let humanscore = 0
+        let computerscore = 0
         function getcomputerchoice(){
             let x = Math.random()
             if (x<1/3)
@@ -37,16 +39,27 @@
                     (computerchoice === "scissors" && humanchoice === "paper") ||
                     (computerchoice === "paper" && humanchoice === "rock")
                 ) {
-                    console.log("Computer wins!");
+                    console.log("Computer wins Round!");
                     computerscore++
                 } else {
-                    console.log("You win!");
+                    console.log("You win Round!");
                     humanscore++
                 }
+                console.log("your score: "+humanscore+"\ncomputer score: "+computerscore)
             }
         }
-        let humanscore = 0
-        let computerscore = 0
+        function playgame(){
+            while( humanscore<5 && computerscore<5){
+                let h = gethumanchoice()
+                let c = getcomputerchoice()
+                playround(h,c)
+            }
+            if (humanscore == 5)
+            console.log("you win the game!!")
+            else
+            console.log("computer wins the game!!")
+            console.log("your score: "+humanscore+"\ncomputer score: "+computerscore)
+        }
 </script>    
 </head>
 <body>   
