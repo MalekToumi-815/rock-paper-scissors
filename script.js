@@ -29,6 +29,16 @@ function playround(humanchoice,computerchoice){
         humanscore++
     }
     result.innerHTML += "<br>your score: "+humanscore+"<br>computer score: "+computerscore
+    if (humanscore == 5){
+        result.innerHTML += "<br>Player wins the game!!!"
+        humanscore = 0
+        computerscore = 0
+    }
+    if (computerscore == 5){
+        result.innerHTML += "<br>Computer wins the game!!!"
+        humanscore = 0
+        computerscore = 0
+    }
 }
 document.querySelector("#rock").addEventListener("click",() => playround("rock",getcomputerchoice()))
 document.querySelector("#paper").addEventListener("click",() => playround("paper",getcomputerchoice()))
