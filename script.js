@@ -10,27 +10,25 @@ function getcomputerchoice(){
     return "paper"
 }
 function playround(humanchoice,computerchoice){
-    if (humanchoice === null) {
-    console.log("Game cancelled.");
-    } else {
-        console.log("Computer chose:", computerchoice);
-        console.log("You chose:", humanchoice);
+    const result = document.querySelector("#result")
+    result.textContent=""
+    result.innerHTML += "<br>Computer chose: " + computerchoice + "<br>You chose: " + humanchoice;
 
-        if (computerchoice === humanchoice) {
-            console.log("It's a tie!");
-        } else if (
-            (computerchoice === "rock" && humanchoice === "scissors") ||
-            (computerchoice === "scissors" && humanchoice === "paper") ||
-            (computerchoice === "paper" && humanchoice === "rock")
-        ) {
-            console.log("Computer wins Round!");
-            computerscore++
-        } else {
-            console.log("You win Round!");
-            humanscore++
-        }
-        console.log("your score: "+humanscore+"\ncomputer score: "+computerscore)
+
+    if (computerchoice === humanchoice) {
+        result.innerHTML += "<br>It's a tie!"
+    } else if (
+        (computerchoice === "rock" && humanchoice === "scissors") ||
+        (computerchoice === "scissors" && humanchoice === "paper") ||
+        (computerchoice === "paper" && humanchoice === "rock")
+    ) {
+        result.innerHTML += "<br>Computer wins Round!"
+        computerscore++
+    } else {
+        result.innerHTML += "<br>You win Round!"
+        humanscore++
     }
+    result.innerHTML += "<br>your score: "+humanscore+"<br>computer score: "+computerscore
 }
 document.querySelector("#rock").addEventListener("click",() => playround("rock",getcomputerchoice()))
 document.querySelector("#paper").addEventListener("click",() => playround("paper",getcomputerchoice()))
