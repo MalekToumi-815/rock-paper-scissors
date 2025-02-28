@@ -9,16 +9,6 @@ function getcomputerchoice(){
     else 
     return "paper"
 }
-function gethumanchoice(){
-    while (true){
-        let x = prompt("choose between rock,paper and scissors: ").toLowerCase()
-        if (x == null) return null
-        if (x=="rock" || x=="paper" || x=="scissors")
-        return x
-        else
-        console.log("wrong choice!!")
-    }
-}
 function playround(humanchoice,computerchoice){
     if (humanchoice === null) {
     console.log("Game cancelled.");
@@ -42,3 +32,6 @@ function playround(humanchoice,computerchoice){
         console.log("your score: "+humanscore+"\ncomputer score: "+computerscore)
     }
 }
+document.querySelector("#rock").addEventListener("click",() => playround("rock",getcomputerchoice()))
+document.querySelector("#paper").addEventListener("click",() => playround("paper",getcomputerchoice()))
+document.querySelector("#scissors").addEventListener("click",() => playround("scissors",getcomputerchoice()))
