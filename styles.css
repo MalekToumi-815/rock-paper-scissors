@@ -1,6 +1,37 @@
+body{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to left, rgb(111, 175, 245),rgb(255, 223, 0),rgb(167, 9, 88));
+}
 #rock img, #paper img, #scissors img{
     border-radius: 50%;
+    object-fit: cover;
 }
 button{
+    border-radius: 50%;
     border: none;
+    padding: 0; 
+    overflow: hidden;
+}
+.choices{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25%;
+}
+#names{
+    gap: 23%;
+}
+span{
+    text-align: center;
+    font-size: 35px;
+}
+#result{
+    width: 100%;
+    text-align: center;
 }
