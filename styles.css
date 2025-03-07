@@ -1,11 +1,12 @@
 body{
-    height: 100%;
+    margin: 0;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background: linear-gradient(to left, rgb(111, 175, 245),rgb(255, 223, 0),rgb(167, 9, 88));
+
 }
 #rock img, #paper img, #scissors img{
     border-radius: 50%;
@@ -16,22 +17,46 @@ button{
     border: none;
     padding: 0; 
     overflow: hidden;
+    width: 75px;
+    height: 75px;
 }
 .choices{
-    width: 100%;
+    width: 1000px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 25%;
+    margin-bottom: 40px;
 }
 #names{
-    gap: 23%;
+    margin-top: 100px;
 }
 span{
     text-align: center;
-    font-size: 35px;
+    font-size: 30px;
+    width: 75px;
 }
 #result{
-    width: 100%;
+    margin: 0;
+    width: 1000px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+}
+.indicator{
+    margin: 0;
+    width: 750px;
+    font-size: 30px;
+}
+#restart {
+    border: 4px solid white;
+    background-color: rgb(255, 223, 0);
+    font-weight: 900;
+    margin: 15px;
+}
+#restart:hover,button:hover {
+    border: 4px solid black;
 }
